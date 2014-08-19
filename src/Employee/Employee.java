@@ -36,7 +36,7 @@ class DatePickerExample extends JFrame {
 public class Employee extends javax.swing.JFrame {
     
    
-    
+   double total= 15000.00; 
    //private DB_connection dbConnManager = null;
    // private Object s;
    
@@ -485,7 +485,7 @@ public class Employee extends javax.swing.JFrame {
                             .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addContainerGap(439, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -500,7 +500,7 @@ public class Employee extends javax.swing.JFrame {
                             .addGroup(jPanel20Layout.createSequentialGroup()
                                 .addGap(111, 111, 111)
                                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(62, 62, 62))
                             .addGroup(jPanel20Layout.createSequentialGroup()
@@ -877,7 +877,7 @@ public class Employee extends javax.swing.JFrame {
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Male");
         jPanel6.add(jRadioButton1);
-        jRadioButton1.setBounds(174, 172, 55, 25);
+        jRadioButton1.setBounds(174, 172, 47, 23);
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Female");
@@ -887,7 +887,7 @@ public class Employee extends javax.swing.JFrame {
             }
         });
         jPanel6.add(jRadioButton2);
-        jRadioButton2.setBounds(233, 172, 71, 25);
+        jRadioButton2.setBounds(233, 172, 59, 23);
 
         jButton4.setFont(new java.awt.Font("Showcard Gothic", 0, 13)); // NOI18N
         jButton4.setText("Add");
@@ -919,6 +919,11 @@ public class Employee extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Showcard Gothic", 1, 13)); // NOI18N
         jButton6.setText("Upload");
         jButton6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel11.add(jButton6);
         jButton6.setBounds(20, 150, 100, 30);
 
@@ -931,15 +936,15 @@ public class Employee extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
+        jLayeredPane1.add(jPanel7);
         jPanel7.setBounds(0, 0, 800, 640);
-        jLayeredPane1.add(jPanel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLayeredPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1086,6 +1091,11 @@ public class Employee extends javax.swing.JFrame {
         jTextField19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField19ActionPerformed(evt);
+            }
+        });
+        jTextField19.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField19KeyReleased(evt);
             }
         });
 
@@ -1349,8 +1359,8 @@ public class Employee extends javax.swing.JFrame {
                 .addGap(0, 13, Short.MAX_VALUE))
         );
 
+        jLayeredPane2.add(jPanel12);
         jPanel12.setBounds(0, 0, 800, 640);
-        jLayeredPane2.add(jPanel12, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1521,8 +1531,8 @@ public class Employee extends javax.swing.JFrame {
             .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
+        jLayeredPane3.add(jPanel16);
         jPanel16.setBounds(0, 0, 800, 640);
-        jLayeredPane3.add(jPanel16, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1770,6 +1780,18 @@ public class Employee extends javax.swing.JFrame {
           }    
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField19KeyReleased
+if(evt.getKeyChar()==10)
+{
+    jTextField26.setText(String.valueOf(total*Double.parseDouble(jTextField19.getText())));
+}
+// TODO add your handling code here:
+    }//GEN-LAST:event_jTextField19KeyReleased
 
    
  
