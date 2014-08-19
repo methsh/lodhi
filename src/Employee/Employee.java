@@ -35,7 +35,7 @@ class DatePickerExample extends JFrame {
  */
 public class Employee extends javax.swing.JFrame {
     
-   
+   String gender="male";
    double total= 15000.00; 
    //private DB_connection dbConnManager = null;
    // private Object s;
@@ -47,13 +47,20 @@ public class Employee extends javax.swing.JFrame {
      */
     public Employee() {
         initComponents();
+        init();
         jLayeredPane1.setVisible(false);
         jLayeredPane2.setVisible(false);
         jLayeredPane3.setVisible(false);
      //   dbConnManager = new DB_connection();
         
     }
-
+    public void init()
+    {
+        if(gender.matches("male"))
+        {
+            jRadioButton3.setSelected(true);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
